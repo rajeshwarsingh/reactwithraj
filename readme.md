@@ -36,3 +36,9 @@ NPX :- executes package
 # Browerslist
 package supports legacy browers
 https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+
+# Extentions
+- prettier
+- Bracket Pair Colorization Toggler
+- ESLint 
+- Better Comments
