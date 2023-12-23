@@ -7,16 +7,16 @@
 
 const parent = React.createElement('div', { id: 'parent' },
   [React.createElement('div', { id: 'child1' }, 
-  [React.createElement('h1', {}, 'i am heading one'),
-  React.createElement('h2', {}, 'i am heading two')]
+  [React.createElement('h1', {}, 'I am heading one'),
+  React.createElement('h2', {}, 'I am heading two')]
   ),
   React.createElement('div', { id: 'child2' }, 
-  [React.createElement('h1', {}, 'i am heading one'),
-  React.createElement('h2', {}, 'i am heading two')]
+  [React.createElement('h1', {}, 'I am heading one'),
+  React.createElement('h2', {}, 'I am heading two')]
   )]
   );
 
-  console.log(parent)
+console.log(parent)
 
 const heading = React.createElement('h1', { id: 'heading' }, 'testing hello world in react js');
 
