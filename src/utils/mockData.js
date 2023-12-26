@@ -1,24 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * app
- * header
- * - logo
- * - nav
- * body
- * - Search
- * - RestorantContainer
- * - RestorantCard
- *  -Img
- *  - Name of res, star rating, cusine, delivery time
- * footer
- * - link
- * - copyright
- * - address
- * **/
-
-const resData = [
+let resData = [
   {
     info: {
       id: "63801",
@@ -981,65 +961,6 @@ const resData = [
     },
   },
 ];
+resData = resData.map((res) => res.info);
 
-const RestorantCard = ({ resData = {} }) => {
-  
-  const { name, cuisines, avgRating, costForTwo, sla } = resData;
-  return (
-    <div className="res-card">
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/${resData.cloudinaryImageId}`}
-      ></img>
-      <h3>{name}</h3>
-      <h4>{cuisines.join()}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{sla.deliveryTime} min</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search"> search</div>
-      <div className="res-container">
-        {resData.map((resItem, i) => (
-          <RestorantCard key={resItem.info.id} resData={resItem.info} />
-        ))}
-      </div>
-    </div>
-  );
-};
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://img.freepik.com/premium-vector/good-food-logo-template_79169-17.jpg?w=360"
-        ></img>
-      </div>
-      <div className="nav-item">
-        <ul>
-          <li>home</li>
-          <li>about</li>
-          <li>contact</li>
-          <li>cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const AppLayout = () => (
-  <div className="app">
-    <Header />
-    <Body />
-  </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resData;

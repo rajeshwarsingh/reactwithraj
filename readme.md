@@ -42,3 +42,27 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 - Bracket Pair Colorization Toggler
 - ESLint 
 - Better Comments
+
+# food app
+/**
+ * app
+ * header
+ * - logo
+ * - nav
+ * body
+ * - Search
+ * - RestaurantContainer
+ * - RestaurantCard
+ *  -Img
+ *  - Name of res, star rating, cusine, delivery time
+ * footer
+ * - link
+ * - copyright
+ * - address
+ * **/
+
+ REcomonded file structure
+ https://legacy.reactjs.org/docs/faq-structure.html
+
+ # vertual dom react fiber algorithm
+ https://github.com/acdlite/react-fiber-architecture
