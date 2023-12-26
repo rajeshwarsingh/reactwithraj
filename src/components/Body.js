@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import { REST_URL } from "../utils/constant.js";
 
 export default () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
@@ -12,9 +14,7 @@ export default () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/mapi/homepage/getCards?lat=19.1939811&lng=72.9571294"
-    );
+    const data = await fetch(REST_URL);
     const json = await data.json();
     const restData =
       json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants?.map(
@@ -25,8 +25,6 @@ export default () => {
     setFilterRestaurant(restData);
   };
 
-  // console.log(searchRes, listOfRestaurants);
-  console.log("rendered called");
   // CONDITIONAL RENDERING
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -69,7 +67,9 @@ export default () => {
       </div>
       <div className="res-container">
         {filterRestaurants.map((resItem, i) => (
-          <RestaurantCard key={resItem.id} resData={resItem} />
+          <Link to={`/restaurants/${resItem.id}`}>
+            <RestaurantCard key={resItem.id} resData={resItem} />
+          </Link>
         ))}
       </div>
     </div>

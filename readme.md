@@ -66,3 +66,13 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
  # vertual dom react fiber algorithm
  https://github.com/acdlite/react-fiber-architecture
+
+ # router dom
+ https://reactrouter.com/en/main/routers/create-browser-router
+
+# shortcut for snipet
+ rafc
+
+ # A tag VS Link - a tag will refresh the pagd, Link redirect without refresh
+ # client side routing and server side routing
+ # dynamic routing/ static routing / error route
