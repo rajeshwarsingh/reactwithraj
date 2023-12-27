@@ -76,3 +76,15 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
  # A tag VS Link - a tag will refresh the pagd, Link redirect without refresh
  # client side routing and server side routing
  # dynamic routing/ static routing / error route
+
+ # React lifecycle 
+ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+ # custom hook useRestaurantMenu - Component should follow single responsibility principle
+
+ # Create customHook utility function and deploy it in github
+
+ # Online event listner
+ https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event
+
+ # To open the picker, press the Windows Logo + ; (semicolon) keys on your keyboard.

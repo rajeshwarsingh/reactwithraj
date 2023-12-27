@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { REST_URL } from "../utils/constant.js";
+import useOnlineStatus from '../utils/useOnlineStatus.js'
 
 export default () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
@@ -24,6 +25,12 @@ export default () => {
     setListOfRestaurant(restData);
     setFilterRestaurant(restData);
   };
+  
+  if(!useOnlineStatus()){
+    return (
+      <h1>Opss! You are offline. Please fix your internet.</h1>
+    )
+  }
 
   // CONDITIONAL RENDERING
   return listOfRestaurants.length === 0 ? (
