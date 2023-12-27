@@ -17,3 +17,15 @@ export default ({ resData = {} }) => {
     </div>
   );
 };
+
+// HIGHER ORDER FUNCTION
+export const withPromotedLabel = (RestaurantCard)=>{
+  return (props)=>{
+    return (
+      <div>
+        <label className="absolute bg-black text-white rounded-lg m-1 p-1">promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+} 
