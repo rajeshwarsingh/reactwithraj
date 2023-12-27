@@ -14,9 +14,7 @@ export default () => {
       </div>
       <div className="nav-item">
         <ul>
-          <li>
-            Online status : {onlineStatus?"✅":"🔴"}
-          </li>
+          <li>Online status : {onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -25,6 +23,9 @@ export default () => {
           </li>
           <li>
             <Link to="/contact">ContactUs</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li>
             <Link to="/cart">Cart</Link>
