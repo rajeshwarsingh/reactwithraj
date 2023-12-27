@@ -42,6 +42,7 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 - Bracket Pair Colorization Toggler
 - ESLint 
 - Better Comments
+- Tailwind CSS IntelliSense
 
 # food app
 /**
@@ -88,3 +89,6 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
  https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event
 
  # To open the picker, press the Windows Logo + ; (semicolon) keys on your keyboard.
+
+ # SASS 
+ # https://styled-components.com/

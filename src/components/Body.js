@@ -37,15 +37,16 @@ export default () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             value={searchRes}
             onChange={(e) => setSearchRes(e.target.value)}
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
           />
           <button
+            className="px-4 py-1 bg-green-200 m-4 rounded-lg"
             onClick={() => {
               searchRes
                 ? setFilterRestaurant(
@@ -59,8 +60,9 @@ export default () => {
             search
           </button>
         </div>
+        <div className="search m-4 p-4 flex items-center">
         <button
-          className="filter-btn"
+          className="px-4 py-1 bg-gray-400 m-4 rounded-lg"
           onClick={() => {
             setListOfRestaurant(
               listOfRestaurants.filter(
@@ -71,8 +73,10 @@ export default () => {
         >
           Top Rated Restaurant
         </button>
+        </div>
+        
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filterRestaurants.map((resItem, i) => (
           <Link to={`/restaurants/${resItem.id}`}>
             <RestaurantCard key={resItem.id} resData={resItem} />
