@@ -92,3 +92,5 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
  # SASS 
  # https://styled-components.com/
+
+ #withPromotedLabel - higher order component

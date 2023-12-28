@@ -33,7 +33,7 @@ export default () => {
   }
 
   // CONDITIONAL RENDERING
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -76,9 +76,9 @@ export default () => {
         </div>
       </div>
       <div className="flex flex-wrap">
-        {filterRestaurants.map((resItem, i) => (
-          <Link key={resItem.id} to={`/restaurants/${resItem.id}`}>
-            {resItem.promoted ? (
+        {filterRestaurants?.map((resItem, i) => (
+          <Link key={resItem?.id} to={`/restaurants/${resItem?.id}`}>
+            {resItem?.promoted ? (
               <PromotedRestaurantCard resData={resItem}/>
             ) : (
               <RestaurantCard resData={resItem} />
