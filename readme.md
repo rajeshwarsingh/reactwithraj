@@ -108,3 +108,31 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
   {(data)=>console.log(data)}
   <UserContext.Consumer>```
   
+  # react dev tools
+
+  # Redux dev tools
+  write opration flow ==> [add button -> action(dispatch) -> reducer -> modifiy store object]
+  Read opration flow ==> [Slector(Subscribing store) -> modifiy store object]
+  
+  - Install @reduxjs/toolkit and react-redux
+  - build our store
+  - Connect our store to the app
+  - Slice(cartSlice)
+  - dispatch(action)
+  - selector
+
+  ```const cartItems = useSelector((store) => store.cart.items); //always use this - good
+  
+    const store = useSelector((store) => store);
+    const cartItems = store.cart.items //bad
+    
+    performance issue
+    ```
+
+    immer.js redux uses
+
+    proxy object
+
+    RTK query(it replace old thunk)
+  
+

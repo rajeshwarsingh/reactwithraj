@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constant.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import UserContext from "../utils/UserContext.js";
+import { useSelector } from "react-redux";
 
 export default () => {
   const [btnName, setBtnName] = useState("Login");
@@ -10,6 +11,9 @@ export default () => {
   const onlineStatus = useOnlineStatus();
   
   const {user} = useContext(UserContext);
+
+  const cartItems = useSelector((store)=>store.cart.items);
+  console.log(cartItems)
   
   return (
     <div className="flex justify-between bg-pink-200  shadow-lg">
@@ -31,8 +35,8 @@ export default () => {
           <li className="px-4">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4">
-            <Link to="/cart">Cart</Link>
+          <li className="px-4 font-bold text-lg">
+            <Link to="/cart">Cart - ({cartItems.length} items )</Link>
           </li>
           <button
             className="login-btn"

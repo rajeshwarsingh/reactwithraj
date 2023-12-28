@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
+import { Provider } from "react-redux";
 import Contact from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import AppStore from './utils/appstore';
+import Cart from "./components/Cart.js";
 
 const About = lazy((()=> import("./components/About")))
 
@@ -30,12 +32,14 @@ const AppLayout = () => {
   }, []);
 
   return (
+    <Provider store={AppStore} >
     <UserContext.Provider value={{user:userName, setUserName}}>
       <div className="app">
         <Header />
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -68,6 +72,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurants/:resId",
         element: <RestaurantMenu />,
       },
+      {
+        path: "/cart",
+        element: <Cart />,
+      }
     ],
     errorElement: <Error />,
   },
