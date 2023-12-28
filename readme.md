@@ -93,4 +93,18 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
  # SASS 
  # https://styled-components.com/
 
- #withPromotedLabel - higher order component
+ # withPromotedLabel - higher order component
+
+ # Lifting state up
+ - https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example
+ - accoudian
+
+ # controlled and uncontrolled state
+ - accoudian
+
+  # Props drilling
+  useContext - usecontact hook is not available in class based component so for that we need to use consumer
+  ```<UserContext.Consumer>
+  {(data)=>console.log(data)}
+  <UserContext.Consumer>```
+  

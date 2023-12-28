@@ -1,14 +1,16 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { REST_URL } from "../utils/constant.js";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
-
+import UserContext from "../utils/UserContext.js";
 export default () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filterRestaurants, setFilterRestaurant] = useState([]);
   const [searchRes, setSearchRes] = useState("");
+
+  const {setUserName, user} = useContext(UserContext)
 
   useEffect(() => {
     fetchData();
@@ -74,12 +76,17 @@ export default () => {
             Top Rated Restaurant
           </button>
         </div>
+
+        <div className="m-4 p-4 flex items-center">
+          <label>User Name :</label>
+          <input className="border border-black p-2" value={user} onChange={(e)=>setUserName(e.target.value)}/>
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filterRestaurants?.map((resItem, i) => (
           <Link key={resItem?.id} to={`/restaurants/${resItem?.id}`}>
             {resItem?.promoted ? (
-              <PromotedRestaurantCard resData={resItem}/>
+              <PromotedRestaurantCard resData={resItem} />
             ) : (
               <RestaurantCard resData={resItem} />
             )}

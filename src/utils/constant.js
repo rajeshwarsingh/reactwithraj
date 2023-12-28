@@ -8,4 +8,4 @@ export const MENU_URL =
   "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.1939811&lng=72.9571294&isMenuUx4=true&submitAction=ENTER&restaurantId=";
 
 export const REST_URL =
-  "https://www.swiggy.com/mapi/homepage/getCards?lat=19.1939811&lng=72.9571294";
+  "https://www.swiggy.com/mapi/homepage/getCards?lat=18.6010921&lng=73.7641245";

@@ -1,10 +1,8 @@
-import { useState } from "react";
 import ItemListMenu from "./ItemListMenu";
-const RestaurentCategory = ({ data }) => {
-  const [showItem, setShowItem] = useState(false);
+const RestaurentCategory = ({ data, showItems, setShowIndex }) => {
 
   const handleClick = ()=>{
-    setShowItem(showItem?false:true)
+    setShowIndex()
   } 
   return (
     <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4 ">
@@ -12,10 +10,10 @@ const RestaurentCategory = ({ data }) => {
         <span className="font-bold text-lg">
           {data.title} ({data.itemCards.length})
         </span>
-        <span>{showItem?"⬆️":"⬇️"}</span>
+        <span>{showItems?"⬆️":"⬇️"}</span>
       </div>
       <div>
-      { showItem && <ItemListMenu items={data.itemCards} />}
+      { showItems && <ItemListMenu items={data.itemCards} />}
       </div>
     </div>
   );

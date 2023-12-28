@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constant.js";
+import UserContext from "../utils/UserContext.js";
 
 export default ({ resData = {} }) => {
   const { name, cuisines, avgRating, costForTwo, sla } = resData;
+  const {user} = useContext(UserContext)
   return (
     <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg">
       <img
@@ -14,6 +17,7 @@ export default ({ resData = {} }) => {
       <h4>{avgRating} stars</h4>
       <h4>{costForTwo}</h4>
       <h4>{sla.deliveryTime} min</h4>
+      <h4>user : {user}</h4>
     </div>
   );
 };
