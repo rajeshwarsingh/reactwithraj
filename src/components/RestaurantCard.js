@@ -6,7 +6,7 @@ export default ({ resData = {} }) => {
   const { name, cuisines, avgRating, costForTwo, sla } = resData;
   const {user} = useContext(UserContext)
   return (
-    <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg">
+    <div data-testid="resCard" className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg">
       <img
         className="rounded-lg"
         alt="res-logo"

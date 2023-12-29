@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 import { REST_URL } from "../utils/constant.js";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import UserContext from "../utils/UserContext.js";
+
 export default () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filterRestaurants, setFilterRestaurant] = useState([]);
@@ -23,6 +24,7 @@ export default () => {
       json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants?.map(
         (res) => res.info
       );
+      
     // OPTIONAL CHAINING
     setListOfRestaurant(restData);
     setFilterRestaurant(restData);
@@ -45,6 +47,7 @@ export default () => {
             value={searchRes}
             onChange={(e) => setSearchRes(e.target.value)}
             type="text"
+            data-testid="searchInput"
             className="border border-solid border-black"
           />
           <button
@@ -66,7 +69,7 @@ export default () => {
           <button
             className="px-4 py-1 bg-gray-400 m-4 rounded-lg"
             onClick={() => {
-              setListOfRestaurant(
+              setFilterRestaurant(
                 listOfRestaurants.filter(
                   (restaurant) => restaurant.avgRating > 4.5
                 )
