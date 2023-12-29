@@ -2,6 +2,8 @@ Tilde (~) vs Caret (^) in package.json
 
 caret (^) is used to specify a “compatible with most recent
 
+_ _ :- two times underscore known as dunder 
+
 https://medium.com/geekculture/tilde-vs-caret-in-package-json-whats-the-difference-2682b7e6ecf8#:~:text=The%20caret%20(%5E)%20is,compatibility%20with%20the%20major%20version.
 
 
@@ -43,6 +45,7 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 - ESLint 
 - Better Comments
 - Tailwind CSS IntelliSense
+- vs code icon
 
 # food app
 /**
@@ -135,4 +138,30 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
     RTK query(it replace old thunk)
   
+
+# Type of testing (developer)
+- Unit Testing
+- integration testing
+- end-to-end testing (requre cypress)
+
+## Unit Testing : testing component in isolation
+ - react testing library
+ - jest
+
+ ## setting up testing in our app
+ - Install react testing library
+ - install jest
+ - install bebel dependencies
+ - configure bebel
+ - https://parceljs.org/languages/javascript/#babel
+ - Configure parcel config  file to disable bebel conflict
+ - write jest configureation
+ - install jsdom library(https://testing-library.com/docs/react-testing-library/setup#jest-28)
+ - jsdom provide environment to run the test as it's not running on browser
+ - install @babel/preset-react to make JSX work in the test cases
+ - include @babel/preset-react inside my bebel config
+ - npm i -D install @testing-library/jest-dom
+ 
+ # Command to run test
+ ```npm run test
 
