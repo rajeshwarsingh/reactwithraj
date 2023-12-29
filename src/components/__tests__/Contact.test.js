@@ -3,6 +3,24 @@ import ContactUs from "../ContactUs";
 import "@testing-library/jest-dom";
 
 describe("Contact us page test cases", () => {
+  
+  beforeAll(()=>{
+    console.log("beforeAll")
+  })
+
+  afterAll(()=>{
+    console.log("afterAll")
+  })
+
+  beforeEach(()=>{
+    console.log("beforeEach")
+  })
+
+  afterEach(()=>{
+    console.log("afterEach")
+  })
+
+
   test("Should load contact us page", () => {
     render(<ContactUs />);
     const heading = screen.getByRole("button");
@@ -26,6 +44,5 @@ describe("Contact us page test cases", () => {
     // querying
     const inputsBoxes = screen.getAllByRole("textbox");
     expect(inputsBoxes.length).toBe(2);
-    console.log(inputsBoxes);
   });
 });
